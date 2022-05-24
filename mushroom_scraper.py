@@ -59,6 +59,9 @@ browser = webdriver.Chrome(
 
 names = get_headers('Mushroom_Dataset_Headers.csv')
 for name in names:
-    print('Getting images of class:', name)
-    get_images(name.strip(), browser)
+    try:
+        print('Getting images of class:', name)
+        get_images(name.strip(), browser)
+    except:
+        pass
 browser.close()
